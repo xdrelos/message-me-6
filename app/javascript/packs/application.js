@@ -11,3 +11,9 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("semantic-ui-sass")
+
+document.addEventListener('turbolinks:load', () => {
+  $('.ui.dropdown').dropdown()
+})
