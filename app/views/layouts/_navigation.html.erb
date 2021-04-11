@@ -1,7 +1,7 @@
 <div class="ui large menu">
   <div class="ui container">
 
-    <%= active_link_to 'Chatroom', root_path, class: "item" %>
+    <%= active_link_to 'Chatroom', root_path, class: "item", active: :exclusive %>
     <a class="item">
       Messages
     </a>
@@ -9,7 +9,7 @@
       <div class="ui dropdown item">
         Account <i class="dropdown icon"></i>
         <div class="menu">
-          <a class="item">Log in</a>
+          <%= active_link_to 'Log in', login_path, class: "item", active: :exclusive %>
           <a class="item">Log out</a>
           <a class="item">Sign up</a>
         </div>
