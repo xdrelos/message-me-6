@@ -17,3 +17,13 @@ require("semantic-ui-sass")
 document.addEventListener('turbolinks:load', () => {
   $('.ui.dropdown').dropdown()
 })
+document.addEventListener('turbolinks:load', () => {
+  $('.message .close')
+    .on('click', function() {
+      $(this)
+        .closest('.message')
+        .transition('fade')
+      ;
+    })
+  ;
+})
