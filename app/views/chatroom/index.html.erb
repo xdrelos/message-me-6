@@ -11,34 +11,15 @@
 
       <div class="content">
         <div class="ui feed">
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em class="ui olive horizontal label">Elliot Fu</em>: Test message.
+          <% @messages.each do |message|%>
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <em class="ui olive horizontal label"><%= message.user.username %></em>: <%= message.body %>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em class="ui olive horizontal label">Stevie Feliciano</em> added <a>Elliot Fu</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <a>Helen Troy</a> added <a>Christian Rocha</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <a>Christian Rocha</a> signed up for the  site.
-              </div>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
       <div class="extra content">
