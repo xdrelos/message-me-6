@@ -20,6 +20,16 @@ export const scroll_bottom = function() {
   }
 };
 
+let submit_messages = function () {
+  $('#input_message').on('keydown', function (event) {
+    if (event.keyCode == 13) {
+      $('#button_send').click();
+      event.target.value = '';
+      event.preventDefault();
+    }
+  });
+};
+
 document.addEventListener('turbolinks:load', () => {
   $('.ui.dropdown').dropdown();
   $('.message .close').on('click', function() {
@@ -28,5 +38,6 @@ document.addEventListener('turbolinks:load', () => {
       .transition('fade')
     ;
   });
+  submit_messages();
   scroll_bottom();
 })
