@@ -3,7 +3,7 @@ class ChatroomController < ApplicationController
   
   def index
     @message = Message.new
-    @messages = Message.all
+    @messages = Message.render_msg_limited
   end
   
 end
