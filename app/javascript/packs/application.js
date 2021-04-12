@@ -14,16 +14,19 @@ ActiveStorage.start()
 
 require("semantic-ui-sass")
 
+export const scroll_bottom = function() {
+  if($('#message-box').length > 0){
+    $('#message-box').scrollTop($('#message-box')[0].scrollHeight);
+  }
+};
+
 document.addEventListener('turbolinks:load', () => {
-  $('.ui.dropdown').dropdown()
-})
-document.addEventListener('turbolinks:load', () => {
-  $('.message .close')
-    .on('click', function() {
-      $(this)
-        .closest('.message')
-        .transition('fade')
-      ;
-    })
-  ;
+  $('.ui.dropdown').dropdown();
+  $('.message .close').on('click', function() {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+    ;
+  });
+  scroll_bottom();
 })
